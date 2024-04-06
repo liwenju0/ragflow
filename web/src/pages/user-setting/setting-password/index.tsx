@@ -1,4 +1,5 @@
 import { useOneNamespaceEffectsLoading } from '@/hooks/storeHooks';
+import { useTranslation } from 'react-i18next';
 import { useSaveSetting } from '@/hooks/userSettingHook';
 import { rsaPsw } from '@/utils';
 import { Button, Divider, Form, Input, Space } from 'antd';
@@ -20,6 +21,7 @@ const tailLayout = {
 
 const UserSettingPassword = () => {
   const loading = useOneNamespaceEffectsLoading('settingModel', ['setting']);
+  const { t } = useTranslation('translation', { keyPrefix: 'password-setting' });
   const { form, submittable } = useValidateSubmittable();
   const saveSetting = useSaveSetting();
 
@@ -37,8 +39,8 @@ const UserSettingPassword = () => {
   return (
     <section className={styles.passwordWrapper}>
       <SettingTitle
-        title="Password"
-        description="Please enter your current password to change your password."
+        title={t('title')}
+        description={t('description')}
       ></SettingTitle>
       <Divider />
       <Form
@@ -55,13 +57,13 @@ const UserSettingPassword = () => {
         autoComplete="off"
         // requiredMark={'optional'}
       >
-        <Form.Item<FieldType>
-          label="Current password"
+        <Form.Item
+          label={t('current')}
           name="password"
           rules={[
             {
               required: true,
-              message: 'Please input your password!',
+              message: t('current.placeholder'),
               whitespace: true,
             },
           ]}
@@ -69,14 +71,14 @@ const UserSettingPassword = () => {
           <Input.Password />
         </Form.Item>
         <Divider />
-        <Form.Item label="New password" required>
-          <Form.Item<FieldType>
+        <Form.Item label={t('new')} required>
+          <Form.Item
             noStyle
             name="new_password"
             rules={[
               {
                 required: true,
-                message: 'Please input your password!',
+                message: t('new.placeholder'),
                 whitespace: true,
               },
             ]}
@@ -84,18 +86,18 @@ const UserSettingPassword = () => {
             <Input.Password />
           </Form.Item>
           <p className={parentStyles.itemDescription}>
-            Your new password must be more than 8 characters.
+            {t('new.placeholder')}
           </p>
         </Form.Item>
         <Divider />
-        <Form.Item<FieldType>
-          label="Confirm new password"
+        <Form.Item
+          label={t('confirm')}
           name="confirm_password"
           dependencies={['new_password']}
           rules={[
             {
               required: true,
-              message: 'Please confirm your password!',
+              message: t('confirm.placeholder'),
               whitespace: true,
             },
             ({ getFieldValue }) => ({
@@ -103,14 +105,12 @@ const UserSettingPassword = () => {
                 if (!value || getFieldValue('new_password') === value) {
                   return Promise.resolve();
                 }
-                return Promise.reject(
-                  new Error('The new password that you entered do not match!'),
-                );
+                return Promise.reject(new Error(t('match.error')));
               },
             }),
           ]}
         >
-          <Input.Password />
+        <Input.Password />
         </Form.Item>
         <Divider />
         <Form.Item
@@ -120,14 +120,14 @@ const UserSettingPassword = () => {
           }
         >
           <Space>
-            <Button htmlType="button">Cancel</Button>
+            <Button htmlType="button">{t('cancel')}</Button>
             <Button
               type="primary"
               htmlType="submit"
               disabled={!submittable}
               loading={loading}
             >
-              Save
+              {t('save')}
             </Button>
           </Space>
         </Form.Item>

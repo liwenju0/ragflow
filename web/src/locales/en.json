@@ -27,14 +27,51 @@
       "register": "Create an account",
       "continue": "Continue"
     },
+    "panel":
+    {
+      "start": "Start building your smart assisstants.",
+      "signup": "Sign up for free to explore top RAG technology. Create knowledge bases and AIs to empower your business."
+    },
     "header": {
       "knowledgeBase": "Knowledge Base",
       "chat": "Chat",
       "register": "Register",
       "signin": "Sign in",
       "home": "Home",
-      "setting": "用户设置",
-      "logout": "登出"
+      "setting": "user setting",
+      "logout": "logout",
+      "appname": "lightmountain"
+    },
+    "profile-setting":{
+      "Profile": "Profile",
+      "Description": "Update your photo and personal details here.",
+      "Username": "Username",
+      "Username Validation": "Please input your username!",
+      "Your photo": "Your photo",
+      "Photo Description": "This will be displayed on your profile.",
+      "Color schema": "Color schema",
+      "Color Schema Validation": "Please select your color schema!",
+      "Language": "Language",
+      "Language Validation": "Please input your language!",
+      "Timezone": "Timezone",
+      "Timezone Validation": "Please input your timezone!",
+      "Email address": "Email address",
+      "Email Change Alert": "Once registered, E-mail cannot be changed.",
+      "Cancel": "Cancel",
+      "Save": "Save"
+    },
+    "password-setting":{
+      "title": "Password",
+      "description": "Please enter your current password to change your password.",
+      "current": "Current password",
+      "current.placeholder": "Please input your password!",
+      "new": "New password",
+      "new.placeholder": "Your new password must be more than 8 characters.",
+      "confirm": "Confirm new password",
+      "confirm.placeholder": "Please confirm your password!",
+      "match.error": "The new password that you entered do not match!",
+      "cancel": "Cancel",
+      "save": "Save"
     },
     "knowledgeList": {
       "welcome": "Welcome back",
@@ -65,7 +102,7 @@
       "processBeginAt": "Process Begin At",
       "processDuration": "Process Duration",
       "progressMsg": "Progress Msg",
-      "testingDescription": "Final step! After success, leave the rest to Infiniflow AI.",
+      "testingDescription": "Final step! After success, leave the rest to Lightmountain AI.",
       "topK": "Top K",
       "topKTip": "For the computaion cost, not all the retrieved chunk will be computed vector cosine similarity with query. The bigger the 'Top K' is, the higher the recall rate is, the slower the retrieval speed is.",
       "similarityThreshold": "Similarity threshold",

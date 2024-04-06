@@ -1,5 +1,6 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
+import LanguageDetector from 'i18next-browser-languagedetector';
 
 import translation_en from './en.json';
 import translation_zh from './zh.json';
@@ -9,9 +10,11 @@ const resources = {
   zh: translation_zh,
 };
 
-i18n.use(initReactI18next).init({
+i18n
+.use(LanguageDetector)
+.use(initReactI18next).init({
   resources,
-  lng: 'en',
+  lng: 'zh',
   interpolation: {
     escapeValue: false,
   },

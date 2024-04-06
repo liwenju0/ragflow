@@ -1,3 +1,5 @@
+import React, { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import {
   useFetchUserInfo,
   useSaveSetting,
@@ -20,8 +22,6 @@ import {
   Upload,
   UploadFile,
 } from 'antd';
-import { useEffect } from 'react';
-import SettingTitle from '../components/setting-title';
 import { TimezoneList } from '../constants';
 import {
   useSelectSubmitUserInfoLoading,
@@ -34,20 +34,12 @@ import styles from './index.less';
 
 const { Option } = Select;
 
-type FieldType = {
-  nickname?: string;
-  language?: string;
-  email?: string;
-  color_schema?: string;
-  timezone?: string;
-  avatar?: string;
-};
-
 const tailLayout = {
   wrapperCol: { offset: 20, span: 4 },
 };
 
 const UserSettingProfile = () => {
+  const { t } = useTranslation('translation', { keyPrefix: 'profile-setting' });
   const userInfo = useSelectUserInfo();
   const saveSetting = useSaveSetting();
   const submitLoading = useSelectSubmitUserInfoLoading();
@@ -72,8 +64,8 @@ const UserSettingProfile = () => {
   return (
     <section className={styles.profileWrapper}>
       <SettingTitle
-        title="Profile"
-        description="Update your photo and personal details here."
+        title={t("Profile")}
+        description={t("Description")}
       ></SettingTitle>
       <Divider />
       <Spin spinning={loading}>
@@ -91,12 +83,12 @@ const UserSettingProfile = () => {
           autoComplete="off"
         >
           <Form.Item<FieldType>
-            label="Username"
+            label={t("Username")}
             name="nickname"
             rules={[
               {
                 required: true,
-                message: 'Please input your username!',
+                message: t("Username Validation"),
                 whitespace: true,
               },
             ]}
@@ -107,8 +99,8 @@ const UserSettingProfile = () => {
           <Form.Item<FieldType>
             label={
               <div>
-                <Space>Your photo</Space>
-                <div>This will be displayed on your profile.</div>
+                <Space>{t("Your photo")}</Space>
+                <div>{t("Photo Description")}</div>
               </div>
             }
             name="avatar"
@@ -126,41 +118,41 @@ const UserSettingProfile = () => {
             >
               <button style={{ border: 0, background: 'none' }} type="button">
                 <PlusOutlined />
-                <div style={{ marginTop: 8 }}>Upload</div>
+                <div style={{ marginTop: 8 }}>{t("Upload")}</div>
               </button>
             </Upload>
           </Form.Item>
           <Divider />
           <Form.Item<FieldType>
-            label="Color schema"
+            label={t("Color schema")}
             name="color_schema"
             rules={[
-              { required: true, message: 'Please select your color schema!' },
+              { required: true, message: t("Color Schema Validation") },
             ]}
           >
-            <Select placeholder="select your color schema">
-              <Option value="Bright">Bright</Option>
-              <Option value="Dark">Dark</Option>
+            <Select placeholder={t("Color schema")}>
+              <Option value="Bright">{t("Bright")}</Option>
+              <Option value="Dark">{t("Dark")}</Option>
             </Select>
           </Form.Item>
           <Divider />
           <Form.Item<FieldType>
-            label="Language"
+            label={t("Language")}
             name="language"
-            rules={[{ required: true, message: 'Please input your language!' }]}
+            rules={[{ required: true, message: t("Language Validation") }]}
           >
-            <Select placeholder="select your language">
-              <Option value="English">English</Option>
-              <Option value="Chinese">Chinese</Option>
+            <Select placeholder={t("Language")}>
+              <Option value="English">{t("English")}</Option>
+              <Option value="Chinese">{t("Chinese")}</Option>
             </Select>
           </Form.Item>
           <Divider />
           <Form.Item<FieldType>
-            label="Timezone"
+            label={t("Timezone")}
             name="timezone"
-            rules={[{ required: true, message: 'Please input your timezone!' }]}
+            rules={[{ required: true, message: t("Timezone Validation") }]}
           >
-            <Select placeholder="select your timezone" showSearch>
+            <Select placeholder={t("Timezone")} showSearch>
               {TimezoneList.map((x) => (
                 <Option value={x} key={x}>
                   {x}
@@ -169,12 +161,12 @@ const UserSettingProfile = () => {
             </Select>
           </Form.Item>
           <Divider />
-          <Form.Item label="Email address">
+          <Form.Item label={t("Email address")}>
             <Form.Item<FieldType> name="email" noStyle>
               <Input disabled />
             </Form.Item>
             <p className={parentStyles.itemDescription}>
-              Once registered, E-mail cannot be changed.
+              {t("Email Change Alert")}
             </p>
           </Form.Item>
           <Form.Item
@@ -184,14 +176,14 @@ const UserSettingProfile = () => {
             }
           >
             <Space>
-              <Button htmlType="button">Cancel</Button>
+              <Button htmlType="button">{t("Cancel")}</Button>
               <Button
                 type="primary"
                 htmlType="submit"
                 disabled={!submittable}
                 loading={submitLoading}
               >
-                Save
+                {t("Save")}
               </Button>
             </Space>
           </Form.Item>

@@ -4,10 +4,14 @@ import { Flex, Rate, Space, Typography } from 'antd';
 import classNames from 'classnames';
 
 import styles from './index.less';
+import { useTranslation } from 'react-i18next';
+
 
 const { Title, Text } = Typography;
 
 const LoginRightPanel = () => {
+  const { t } = useTranslation('translation', { keyPrefix: 'panel' });
+
   return (
     <section className={styles.rightPanel}>
       <SvgIcon name="login-star" width={80}></SvgIcon>
@@ -16,13 +20,12 @@ const LoginRightPanel = () => {
           level={1}
           className={classNames(styles.white, styles.loginTitle)}
         >
-          Start building your smart assisstants.
+          t('start')
         </Title>
         <Text className={classNames(styles.pink, styles.loginDescription)}>
-          Sign up for free to explore top RAG technology. Create knowledge bases
-          and AIs to empower your business.
+          t('signup')
         </Text>
-        <Flex align="center" gap={16}>
+        {/* <Flex align="center" gap={16}>
           <Avatars></Avatars>
           <Flex vertical>
             <Space>
@@ -37,7 +40,7 @@ const LoginRightPanel = () => {
               from 500+ reviews
             </span>
           </Flex>
-        </Flex>
+        </Flex> */}
       </Flex>
     </section>
   );

@@ -16,9 +16,9 @@ const RightToolBar = () => {
   return (
     <div className={styled.toolbarWrapper}>
       <Space wrap size={16}>
-        <Circle>
+        {/* <Circle>
           <GithubOutlined onClick={handleGithubCLick} />
-        </Circle>
+        </Circle> */}
         {/* <Circle>
           <TranslationIcon />
         </Circle>

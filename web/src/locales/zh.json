@@ -1,15 +1,150 @@
 {
   "translation": {
-    "login": { "login": "登录" },
+    "common": {
+      "delete": "删除",
+      "deleteModalTitle": "确定要删除此项吗？",
+      "ok": "是",
+      "cancel": "否",
+      "total": "总计",
+      "rename": "重命名",
+      "name": "名称",
+      "namePlaceholder": "请输入名称"
+    },
+    "login": {
+      "login": "登录",
+      "signUp": "注册",
+      "loginDescription": "很高兴再次见到您！",
+      "registerDescription": "很高兴您加入我们！",
+      "emailLabel": "邮箱",
+      "emailPlaceholder": "请输入邮箱",
+      "passwordLabel": "密码",
+      "passwordPlaceholder": "请输入密码",
+      "rememberMe": "记住我",
+      "signInTip": "还没有账号？",
+      "signUpTip": "已有账号？",
+      "nicknameLabel": "昵称",
+      "nicknamePlaceholder": "请输入昵称",
+      "register": "创建账号",
+      "continue": "继续"
+    },
+    "panel": {
+      "start": "开始构建你的智能助手",
+      "signup": "免费注册，探索顶级 RAG 技术。创建知识库和人工智能，为您的业务赋能。"
+    },
     "header": {
+      "knowledgeBase": "知识库",
+      "chat": "聊天",
       "register": "注册",
-      "signin": "登陆",
-      "home": "首页",
-      "setting": "user setting",
-      "logout": "logout"
+      "signin": "登录",
+      "home": "主页",
+      "setting": "用户设置",
+      "logout": "登出",
+      "appname": "轻山智能"
+    },
+    "profile-setting": {
+      "Profile": "个人资料",
+      "Description": "在此处更新您的照片和个人详细信息。",
+      "Username": "用户名",
+      "Username Validation": "请输入您的用户名！",
+      "Your photo": "您的照片",
+      "Photo Description": "此将显示在您的个人资料中。",
+      "Color schema": "颜色方案",
+      "Color Schema Validation": "请选择您的颜色方案！",
+      "Language": "语言",
+      "Language Validation": "请输入您的语言！",
+      "Timezone": "时区",
+      "Timezone Validation": "请输入您的时区！",
+      "Email address": "电子邮件地址",
+      "Email Change Alert": "注册后，电子邮件无法更改。",
+      "Cancel": "取消",
+      "Save": "保存"
+    },
+    "password-setting":{
+      "title": "密码",
+      "description": "请输入您当前的密码以更改密码。",
+      "current": "当前密码",
+      "current.placeholder": "请输入您的密码！",
+      "new": "新密码",
+      "new.placeholder": "您的新密码必须超过8个字符。",
+      "confirm": "确认新密码",
+      "confirm.placeholder": "请确认您的密码！",
+      "match.error": "您输入的新密码不匹配！",
+      "cancel": "取消",
+      "save": "保存"
+    },
+    "knowledgeList": {
+      "welcome": "欢迎回来",
+      "description": "今天我们要使用哪个数据库？",
+      "createKnowledgeBase": "创建知识库",
+      "name": "名称",
+      "namePlaceholder": "请输入名称！",
+      "doc": "文档"
+    },
+    "knowledgeDetails": {
+      "dataset": "数据集",
+      "testing": "检索测试",
+      "configuration": "配置",
+      "name": "名称",
+      "namePlaceholder": "请输入名称！",
+      "doc": "文档",
+      "datasetDescription": "嘿，添加数据集后别忘了调整块！😉",
+      "addFile": "添加文件",
+      "searchFiles": "搜索您的文件",
+      "localFiles": "本地文件",
+      "emptyFiles": "创建空文件",
+      "chunkNumber": "块编号",
+      "uploadDate": "上传日期",
+      "chunkMethod": "块方法",
+      "enabled": "已启用",
+      "action": "操作",
+      "parsingStatus": "解析状态",
+      "processBeginAt": "开始处理于",
+      "processDuration": "处理持续时间",
+      "progressMsg": "进度消息",
+      "testingDescription": "最后一步！成功后，将剩下的交给Lightmountain AI。",
+      "topK": "前 K 个",
+      "topKTip": "为了计算成本，不会对检索到的所有块进行与查询的向量余弦相似度计算。'前 K 个' 越大，召回率越高，检索速度越慢。",
+      "similarityThreshold": "相似度阈值",
+      "similarityThresholdTip": "我们使用混合相似度分数来评估两行文本之间的距离。它加权关键词相似度和向量余弦相似度。如果查询和块之间的相似度低于此阈值，则会过滤掉该块。",
+      "vectorSimilarityWeight": "向量相似度权重",
+      "vectorSimilarityWeightTip": "我们使用混合相似度分数来评估两行文本之间的距离。它加权关键词相似度和向量余弦相似度。两者权重的总和为1.0。",
+      "testText": "测试文本",
+      "testTextPlaceholder": "请输入您的问题！",
+      "testingLabel": "测试",
+      "similarity": "混合相似度",
+      "termSimilarity": "术语相似度",
+      "vectorSimilarity": "向量相似度",
+      "hits": "命中",
+      "view": "查看",
+      "filesSelected": "已选择的文件"
+    },
+    "knowledgeConfiguration": {
+      "titleDescription": "在这里更新您的知识库详细信息，特别是解析方法。",
+      "name": "知识库名称",
+      "photo": "知识库图片",
+      "description": "描述",
+      "language": "语言",
+      "languageMessage": "请输入您的语言！",
+      "languagePlaceholder": "请输入您的语言！",
+      "permissions": "权限",
+      "embeddingModel": "嵌入模型",
+      "chunkTokenNumber": "块标记数",
+      "embeddingModelTip": "用于嵌入块的嵌入模型。一旦知识库有块，就无法更改。如果要更改它，您需要删除所有块。",
+      "permissionsTip": "如果权限为 '团队'，则所有团队成员都可以操作知识库。",
+      "chunkTokenNumberTip": "它大约确定一个块的标记数。",
+      "chunkMethodTip": "说明在右边。",
+      "upload": "上传",
+      "english": "英语",
+      "chinese": "中文",
+      "embeddingModelPlaceholder": "请选择一个嵌入模型",
+      "chunkMethodPlaceholder": "请选择一个块方法",
+      "save": "保存",
+      "me": "仅我",
+      "team": "团队",
+      "cancel": "取消"
     },
     "footer": {
-      "detail": "版权所有 @ React"
+      "detail": "保留所有权利 @ React"
     },
     "layout": {
       "file": "文件",
@@ -17,7 +152,7 @@
       "chat": "聊天"
     },
     "setting": {
-      "btn": "中文"
+      "btn": "zh"
     }
   }
 }
