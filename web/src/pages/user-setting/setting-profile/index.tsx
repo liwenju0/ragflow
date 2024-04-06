@@ -1,5 +1,3 @@
-import React, { useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
 import {
   useFetchUserInfo,
   useSaveSetting,
@@ -22,6 +20,8 @@ import {
   Upload,
   UploadFile,
 } from 'antd';
+import { useEffect } from 'react';
+import SettingTitle from '../components/setting-title';
 import { TimezoneList } from '../constants';
 import {
   useSelectSubmitUserInfoLoading,
@@ -34,13 +34,22 @@ import styles from './index.less';
 
 const { Option } = Select;
 
+type FieldType = {
+  nickname?: string;
+  language?: string;
+  email?: string;
+  color_schema?: string;
+  timezone?: string;
+  avatar?: string;
+};
+
 const tailLayout = {
   wrapperCol: { offset: 20, span: 4 },
 };
 
 const UserSettingProfile = () => {
-  const { t } = useTranslation('translation', { keyPrefix: 'profile-setting' });
   const userInfo = useSelectUserInfo();
+  const { t } = useTranslation('translation', { keyPrefix: 'profile-setting' });
   const saveSetting = useSaveSetting();
   const submitLoading = useSelectSubmitUserInfoLoading();
   const { form, submittable } = useValidateSubmittable();
@@ -88,7 +97,7 @@ const UserSettingProfile = () => {
             rules={[
               {
                 required: true,
-                message: t("Username Validation"),
+                message: {t("Username Validation")},
                 whitespace: true,
               },
             ]}
@@ -127,7 +136,7 @@ const UserSettingProfile = () => {
             label={t("Color schema")}
             name="color_schema"
             rules={[
-              { required: true, message: t("Color Schema Validation") },
+              { required: true, message: {t("Color Schema Validation")} },
             ]}
           >
             <Select placeholder={t("Color schema")}>
@@ -139,7 +148,7 @@ const UserSettingProfile = () => {
           <Form.Item<FieldType>
             label={t("Language")}
             name="language"
-            rules={[{ required: true, message: t("Language Validation") }]}
+            rules={[{ required: true, message: {t("Language Validation")} }]}
           >
             <Select placeholder={t("Language")}>
               <Option value="English">{t("English")}</Option>
@@ -150,7 +159,7 @@ const UserSettingProfile = () => {
           <Form.Item<FieldType>
             label={t("Timezone")}
             name="timezone"
-            rules={[{ required: true, message: t("Timezone Validation") }]}
+            rules={[{ required: true, message: {t("Timezone Validation")}}]}
           >
             <Select placeholder={t("Timezone")} showSearch>
               {TimezoneList.map((x) => (
