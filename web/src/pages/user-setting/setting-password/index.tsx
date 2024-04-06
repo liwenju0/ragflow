@@ -63,7 +63,7 @@ const UserSettingPassword = () => {
           rules={[
             {
               required: true,
-              message: {t('current.placeholder')},
+              message: t('current-placeholder'),
               whitespace: true,
             },
           ]}
@@ -78,7 +78,7 @@ const UserSettingPassword = () => {
             rules={[
               {
                 required: true,
-                message: {t('new.placeholder')},
+                message: t('new-placeholder'),
                 whitespace: true,
               },
             ]}
@@ -86,7 +86,7 @@ const UserSettingPassword = () => {
             <Input.Password />
           </Form.Item>
           <p className={parentStyles.itemDescription}>
-            {t('new.placeholder')}
+            {t('new-placeholder')}
           </p>
         </Form.Item>
         <Divider />
@@ -97,7 +97,7 @@ const UserSettingPassword = () => {
           rules={[
             {
               required: true,
-              message: {t('confirm.placeholder')},
+              message: t('confirm-placeholder'),
               whitespace: true,
             },
             ({ getFieldValue }) => ({

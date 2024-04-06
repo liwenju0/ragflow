@@ -31,6 +31,7 @@ import {
 
 import parentStyles from '../index.less';
 import styles from './index.less';
+import { useTranslation } from 'react-i18next';
 
 const { Option } = Select;
 
@@ -97,7 +98,7 @@ const UserSettingProfile = () => {
             rules={[
               {
                 required: true,
-                message: {t("Username Validation")},
+                message: t("Username Validation"),
                 whitespace: true,
               },
             ]}
@@ -136,7 +137,7 @@ const UserSettingProfile = () => {
             label={t("Color schema")}
             name="color_schema"
             rules={[
-              { required: true, message: {t("Color Schema Validation")} },
+              { required: true, message: t("Color Schema Validation") },
             ]}
           >
             <Select placeholder={t("Color schema")}>
@@ -148,7 +149,7 @@ const UserSettingProfile = () => {
           <Form.Item<FieldType>
             label={t("Language")}
             name="language"
-            rules={[{ required: true, message: {t("Language Validation")} }]}
+            rules={[{ required: true, message: t("Language Validation") }]}
           >
             <Select placeholder={t("Language")}>
               <Option value="English">{t("English")}</Option>
@@ -159,7 +160,7 @@ const UserSettingProfile = () => {
           <Form.Item<FieldType>
             label={t("Timezone")}
             name="timezone"
-            rules={[{ required: true, message: {t("Timezone Validation")}}]}
+            rules={[{ required: true, message: t("Timezone Validation")}]}
           >
             <Select placeholder={t("Timezone")} showSearch>
               {TimezoneList.map((x) => (
