@@ -167,7 +167,7 @@ const Login = () => {
                     Sign in with Google
                   </div>
                 </Button> */}
-                <Button
+                {/* <Button
                   block
                   size="large"
                   onClick={toGoogle}
@@ -180,7 +180,7 @@ const Login = () => {
                     />
                     Sign in with Github
                   </div>
-                </Button>
+                </Button> */}
               </>
             )}
           </Form>
