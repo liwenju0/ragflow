@@ -20,10 +20,10 @@ const LoginRightPanel = () => {
           level={1}
           className={classNames(styles.white, styles.loginTitle)}
         >
-          t('start')
+          {t('start')}
         </Title>
         <Text className={classNames(styles.pink, styles.loginDescription)}>
-          t('signup')
+         {t('signup')} 
         </Text>
         {/* <Flex align="center" gap={16}>
           <Avatars></Avatars>

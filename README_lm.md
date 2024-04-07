@@ -41,7 +41,7 @@
 4. 服务器启动成功后再次确认服务器状态：
 
    ```bash
-   $ docker logs -f ragflow-server
+   sudo docker logs -f ragflow-server
    ```
 
    _出现以下界面提示说明服务器启动成功：_
