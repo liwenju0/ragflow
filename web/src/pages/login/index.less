@@ -1,106 +1,149 @@
 @import '../../theme/vars';
 
 .loginPage {
+  min-height: 100vh;
+  height: 100vh;
+  background: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
   display: flex;
-  .loginLeft {
-    // width: 610px;
-    width: 40%;
-    background-color: #fff;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-  }
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow: hidden;
 
-  .leftContainer {
-    width: 60%;
-    padding: 5px, 0px, 5px, 0px;
-    margin: 0 auto;
-  }
+  .loginCard {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 460px;
+    padding: 40px;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
 
-  .loginRight {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex: 1;
-    position: relative;
-    &::before {
-      content: ' ';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background-color: rgba(24, 73, 169, 0.6);
-      background-image: url('@/assets/svg/login-background.svg');
-      background-size: cover;
-      background-blend-mode: multiply;
-      filter: blur(3px);
-      background-position: center;
-      z-index: -1;
+    &::-webkit-scrollbar {
+      width: 6px;
     }
-    .white {
-      color: #fff;
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.1);
+      border-radius: 3px;
     }
-    .pink {
-      color: #e9d7fe;
+
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
     }
-    .rightPanel {
-      max-width: 670px;
-      .loginTitle {
-        font-size: 68px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 90px;
-        letter-spacing: -1.44px;
+
+    :global {
+      .ant-form-item {
+        margin-bottom: 24px;
+
+        &-with-help {
+          margin-bottom: 24px;
+        }
+
+        &-explain {
+          min-height: 24px;
+        }
       }
-      .loginDescription {
-        font-size: 20px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 30px;
+
+      .ant-input-affix-wrapper {
+        border-radius: 8px;
+        padding: 4px 11px;
+
+        &-status-error {
+          border-color: #ff4d4f;
+
+          &:hover {
+            border-color: #ff7875;
+          }
+
+          &:focus {
+            border-color: #ff7875;
+            box-shadow: 0 0 0 2px rgba(255, 77, 79, 0.2);
+          }
+        }
+
+        input {
+          height: 36px;
+        }
+
+        .ant-input-suffix {
+          margin-left: 8px;
+        }
       }
-      .loginRateNumber {
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 24px;
+
+      .ant-checkbox-wrapper {
+        margin: 8px 0;
+        display: flex;
+        align-items: center;
+
+        .ant-checkbox {
+          top: 0;
+        }
+
+        & + span {
+          padding-left: 8px;
+          line-height: 1;
+        }
       }
-      .loginRateReviews {
-        font-size: 16px;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 24px;
+
+      .ant-form-item-control-input {
+        min-height: auto;
       }
     }
   }
 
   .loginTitle {
-    //styleName: Heading/1;
-    font-size: 38px;
-    font-weight: 600;
-    line-height: 46px;
-    letter-spacing: 0em;
-    height: 80px;
-    margin-bottom: 69px;
+    text-align: center;
+    margin-bottom: 32px;
 
-    // text-align: center;
+    h1 {
+      font-size: 28px;
+      color: #1a1a1a;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
     span {
-      font-size: 16px;
-      line-height: 24px;
-
-      color: #000000a6;
+      color: #666;
+      font-size: 14px;
     }
   }
 
-  @media screen and (max-width: 957px) {
-    .loginLeft {
+  .socialLogin {
+    margin-top: 24px;
+
+    button {
       width: 100%;
-      background-color: #fff;
-      height: 100%;
+      height: 44px;
+      border-radius: 8px;
+      margin-top: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+  }
+
+  :global {
+    .ant-form-item-label {
+      padding-bottom: 4px;
     }
 
-    .modal {
-      width: 80%;
+    .ant-input,
+    .ant-input-password {
+      height: 44px;
+      border-radius: 8px;
+    }
+
+    .ant-btn {
+      height: 44px;
+      border-radius: 8px;
+      font-weight: 500;
     }
   }
 }
